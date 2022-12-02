@@ -1,2 +1,2 @@
-# demo-coveralls
+# Demo Coveralls
 test coveralls

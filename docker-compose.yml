@@ -9,3 +9,6 @@ services:
     working_dir: /code
     volumes: 
      - .:/code
+
+# docker exec -it <container_id> sh                                       # connessione alla console
+# docker exec -it <container_id> ./vendor/phpunit/phpunit/phpunit tests/  # lancio tests
