@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  phpcomposer:
+    build:             
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'php-composer'
+    working_dir: /code
+    volumes: 
+     - .:/code
