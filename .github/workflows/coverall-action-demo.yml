@@ -1,0 +1,29 @@
+on: ["push", "pull_request"]
+
+name: Test Coveralls
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Composer 2
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.1"
+
+      - name: PHPUnit tests
+        uses: php-actions/phpunit@v3
+        env:
+            TEST_NAME: Scarlett
+        with:
+          php_version: "8.1"
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@1.1.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
