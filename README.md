@@ -1,0 +1,2 @@
+# demo-coveralls
+test coveralls
