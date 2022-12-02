@@ -19,7 +19,6 @@ jobs:
         env:
             TEST_NAME: Scarlett
         with:
-          php_version: "8.1"
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
 
