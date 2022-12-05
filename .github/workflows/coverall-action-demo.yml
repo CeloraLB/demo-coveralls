@@ -22,19 +22,19 @@ jobs:
       #     coverage: xdebug
 
       - name: PHPUnit tests
-        # env:
-        #   XDEBUG_MODE: coverage
-        # run: |
-        #   php vendor/bin/phpunit --coverage-clover clover.xml --configuration phpunit.xml tests
-        #   ls -la
-        uses: php-actions/phpunit@v3
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          php_extensions: xdebug
-          args: --coverage-clover build/logs/clover.xml --coverage-text
         env:
-            XDEBUG_MODE: coverage
+          XDEBUG_MODE: coverage
+        run: |
+          php vendor/bin/phpunit --coverage-clover clover.xml --configuration phpunit.xml tests
+          ls -la
+        # uses: php-actions/phpunit@v3
+        # with:
+        #   bootstrap: vendor/autoload.php
+        #   configuration: phpunit.xml
+        #   php_extensions: xdebug
+        #   args: --coverage-clover build/logs/clover.xml --coverage-text
+        # env:
+        #     XDEBUG_MODE: coverage
 
       - name: Upload coverage results to Coveralls
         env:
