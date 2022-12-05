@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use \App\ClassExample;
+use App\ClassExample;
 use PHPUnit\Framework\TestCase;
 
 class ClassExampleTest extends TestCase
