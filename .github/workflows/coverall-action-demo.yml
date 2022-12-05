@@ -20,14 +20,13 @@ jobs:
         with:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
-          args: --coverage-php build/cov/coverage-${component_name}.cov
 
       - name: Upload coverage results to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ls -la 
-          php-coveralls --coverage_clover=build/logs/clover.xml -v --root_dir=.
+          php-coveralls --coverage_clover=build/logs/clover.xml -v --root_dir="."
 
       # - name: Coveralls
       #   uses: coverallsapp/github-action@1.1.3
