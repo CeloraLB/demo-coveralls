@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d926d9588db122f43148e4fcd8038c0c",
+    "content-hash": "cb79262509e3c104f6af49313c8c8697",
     "packages": [],
     "packages-dev": [
         {
@@ -649,16 +649,16 @@
         },
         {
             "name": "php-coveralls/php-coveralls",
-            "version": "v2.5.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-coveralls/php-coveralls.git",
-                "reference": "9d8243bbf0e053333692857c98fab7cfba0d60a9"
+                "reference": "2313395ed57d97c64ebfcfbba7243a55710300e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/9d8243bbf0e053333692857c98fab7cfba0d60a9",
-                "reference": "9d8243bbf0e053333692857c98fab7cfba0d60a9",
+                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/2313395ed57d97c64ebfcfbba7243a55710300e5",
+                "reference": "2313395ed57d97c64ebfcfbba7243a55710300e5",
                 "shasum": ""
             },
             "require": {
@@ -679,6 +679,7 @@
             "suggest": {
                 "symfony/http-kernel": "Allows Symfony integration"
             },
+            "default-branch": true,
             "bin": [
                 "bin/php-coveralls"
             ],
@@ -726,9 +727,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-coveralls/php-coveralls/issues",
-                "source": "https://github.com/php-coveralls/php-coveralls/tree/v2.5.3"
+                "source": "https://github.com/php-coveralls/php-coveralls/tree/master"
             },
-            "time": "2022-09-12T20:47:09+00:00"
+            "time": "2022-09-14T12:14:09+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3424,7 +3425,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "php-coveralls/php-coveralls": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

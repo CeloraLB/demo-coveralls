@@ -11,22 +11,35 @@ jobs:
 
       - name: Use Composer 2
         uses: php-actions/composer@v6
+        env: 
+          COMPOSER_ALLOW_XDEBUG: 1
+
+      # - name: Setup PHP
+      #   uses: shivammathur/setup-php@v2
+      #   with:
+      #     php-version: "8.1"
+      #     extensions: ${{ env.extensions }}
+      #     coverage: xdebug
 
       - name: PHPUnit tests
-        uses: php-actions/phpunit@v9
+        uses: php-actions/phpunit@v3
         env:
-            TEST_NAME: Scarlett
-            COMPONENT_NAME: app
+            XDEBUG_MODE: coverage
         with:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
+          php_extensions: xdebug
+          args: --coverage-clover clover.xml --coverage-text
 
       - name: Upload coverage results to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ls -la 
-          php-coveralls --coverage_clover=build/logs/clover.xml -v --root_dir="."
+          ls -la
+          cat output.log
+          composer show
+          composer global require twinh/php-coveralls
+          php-coveralls --coverage_clover=clover.xml -v 
 
       # - name: Coveralls
       #   uses: coverallsapp/github-action@1.1.3
