@@ -25,7 +25,7 @@ jobs:
         env:
           XDEBUG_MODE: coverage
         run: |
-          php vendor/bin/phpunit --coverage-clover clover.xml --configuration phpunit.xml tests
+          php vendor/bin/phpunit --coverage-clover build/logs/clover.xml --configuration phpunit.xml tests
           ls -la
         # uses: php-actions/phpunit@v3
         # with:
