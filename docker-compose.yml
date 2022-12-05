@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: 'php-composer'
+    platform: linux/amd64
     working_dir: /code
     volumes: 
      - .:/code
