@@ -12,6 +12,9 @@ class ClassExampleTest extends TestCase
         $this->obj = new ClassExample();
     }
 
+    /**
+     * @covers App\ClassExample
+     */
     public function testSum(){
         $numbers = [1,2,3];
 
